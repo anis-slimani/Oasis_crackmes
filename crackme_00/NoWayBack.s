@@ -1,16 +1,3 @@
-; -----------------------------------------------------------------------------
-; crackme.asm - Linux x86-64 / NASM / no libc
-;
-; Validation model:
-;   - exactly 16 input bytes (a trailing LF from a terminal is accepted)
-;   - SHA-256 is computed in-process, using a single padded 512-bit block
-;   - only a split/XOR-masked digest is embedded; the plaintext flag is absent
-;
-; Build:
-;   nasm -f elf64 crackme.asm -o crackme.o
-;   ld -o crackme crackme.o
-; -----------------------------------------------------------------------------
-
 default rel
 
 global _start
